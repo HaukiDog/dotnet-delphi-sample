@@ -32,11 +32,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="win\Sample.dll" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="win\" />
+    <None Remove="win" />
+    <None Remove="win64" />
+    <None Remove="linux64" />
   </ItemGroup>
 
 </Project>
