@@ -62,6 +62,6 @@ public class StringTests : IClassFixture<TraceFixture>
     public void PCharReturn()
     {
         _fixture.WriteLine(nameof(PCharReturn));
-        Sample.StringReturn().Should().StartWith("Goodbye");
+        Sample.PCharReturn().Should().StartWith("Goodbye");
     }
 }
