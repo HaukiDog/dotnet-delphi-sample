@@ -14,6 +14,13 @@
 *.userosscache
 *.sln.docstates
 
+Delphi/Linux64/
+Delphi/Win64/
+Delphi/Win32/
+**/__recovery/
+**/__history/
+**/*.dproj.local
+
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
