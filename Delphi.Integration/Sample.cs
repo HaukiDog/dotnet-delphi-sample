@@ -66,11 +66,19 @@ public class Sample
             out string str);
 
         [DllImport(DllPath, CallingConvention = CallingConvention.StdCall)]
+#if LINUX 
         [return: MarshalAs(UnmanagedType.LPWStr)]
+#else
+        [return: MarshalAs(UnmanagedType.BStr)]
+#endif
         internal static extern string WideStringReturn();
 
         [DllImport(DllPath, CallingConvention = CallingConvention.StdCall)]
+#if LINUX 
         [return: MarshalAs(UnmanagedType.LPWStr)]
+#else
+        [return: MarshalAs(UnmanagedType.BStr)]
+#endif
         internal static extern string PCharReturn();
     }
 
