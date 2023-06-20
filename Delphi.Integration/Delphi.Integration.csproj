@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Configurations>Debug;Release;Linux</Configurations>
+    <Platforms>AnyCPU;x86</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup Condition="('$(Configuration)' != 'Linux') AND ('$(Platform)'!='x86')">
+    <Content Include="win64\Sample.dll">
+      <Link>Sample.dll</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup Condition="('$(Configuration)' != 'Linux') AND ('$(Platform)'=='x86')">
+    <Content Include="win\Sample.dll">
+      <Link>Sample.dll</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup Condition="'$(Configuration)' == 'Linux'">
+    <Content Include="linux64\libSample.so">
+      <Link>libSample.so</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="linux64\Sample.o">
+      <Link>Sample.o</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="win\Sample.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="win\" />
+  </ItemGroup>
+
+</Project>
