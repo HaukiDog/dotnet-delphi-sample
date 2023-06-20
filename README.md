@@ -14,10 +14,11 @@ Exercises basic c#/Delphi interaction in win32, win64 and ubuntu linux.
 
 ### Compiling Delphi DLLs
 
-The project depends on the 'sample-delphi-dll' repository. DLLs are built in Delphi and manually added to appropriate folders.
-For information on how to recreate DLLs see that repository.
-
-docker-compose -f docker-compose.testproject1.yml up -d --build
+DLLs are built from the Delphi directory and manually added to appropriate folders. Alternatively, they can be copied via:
+```
+copydlls.bat
+```
+which resides in the Delphi folder. Initial compiled copies of the DLLs are part of the repository, which is a bit unsafe.
 
 ### Running Tests
 
